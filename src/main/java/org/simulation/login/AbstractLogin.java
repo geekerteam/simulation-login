@@ -78,8 +78,10 @@ public abstract class AbstractLogin {
         try {
             readyLogin();                   // 1.为登录准备必要的参数
 
-            getAuthCodeImage();             // 2.获取验证码
-            getInputAuthCode();
+            if (getNeedAuthCode()) {
+                getAuthCodeImage();             // 2.获取验证码
+                getInputAuthCode();
+            }
 
             int result = executeLogin();    // 3.执行登录
             if (result == Constants.SUCCESS) {
@@ -178,6 +180,13 @@ public abstract class AbstractLogin {
      * @return
      */
     protected abstract String getReadyLoginUrl();
+
+    /**
+     * 是否需要验证码
+     *
+     * @return
+     */
+    protected abstract boolean getNeedAuthCode();
 
     /**
      * 获取验证码图片地址

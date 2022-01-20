@@ -162,6 +162,16 @@ public class GitHubLoginAdapter extends AbstractLogin {
     }
 
     /**
+     * 这里需要设置是否需要验证码，根据不同平台自己去设置
+     *
+     * @return
+     */
+    @Override
+    protected boolean getNeedAuthCode() {
+        return false;
+    }
+
+    /**
      * 获取验证码 / get Auth Code
      * 对于GitHub暂时没有使用
      *
