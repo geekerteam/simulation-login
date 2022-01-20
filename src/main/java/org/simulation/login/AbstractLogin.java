@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2017-2019 Sekito Lv(bluetata) <sekito.lv@gmail.com>
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the 'License'); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,31 +17,34 @@ package org.simulation.login;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.simulation.util.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-// import org.codehaus.jackson.map.ObjectMapper;
-
 /**
- * @date     08/24/18 17:22
- * @version  simulation-login version(1.0)</br>
- * @author   bluetata / Sekito.Lv@gmail.com</br>
- * @since    JDK 1.8</br>
+ * @date 08/24/18 17:22
+ * @version simulation-login version(1.0)</br>
+ * @author bluetata / Sekito.Lv@gmail.com</br>
+ * @since JDK 1.8</br>
  */
 public abstract class AbstractLogin {
 
-    private static Log logger = LogFactory.getLog(AbstractLogin.class);
-
+    private static final Logger logger = LoggerFactory.getLogger(AbstractLogin.class);
 
     /**
      * 图片存放的根目录
@@ -69,6 +72,8 @@ public abstract class AbstractLogin {
         readyParams = new HashMap<>();
         userClient = HttpClients.createDefault();
         mapper = new ObjectMapper();
+
+        logger.debug("AbstractLogin constructor");
     }
 
     /**
@@ -156,6 +161,8 @@ public abstract class AbstractLogin {
                 os.close();
             }
         }
+
+        logger.debug("getAuthCodeImage");
     }
 
     /**
@@ -167,6 +174,8 @@ public abstract class AbstractLogin {
         logger.info("请输入下载图片中的验证码[o:重新获取一张]:");
         BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
         authCode = strin.readLine();
+
+        logger.debug("getInputAuthCode");
 
         if (authCode.equals("o")) {
             getAuthCodeImage();

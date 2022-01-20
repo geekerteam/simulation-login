@@ -15,7 +15,8 @@
  */
 package org.simulation.log;
 
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base日志处理类
@@ -28,10 +29,10 @@ import org.apache.logging.log4j.LogManager;
 public class BaseLogger {
 
     //服务状态日志
-    protected static org.apache.logging.log4j.Logger infoLogger = LogManager.getLogger("infoLogger");
-    protected static org.apache.logging.log4j.Logger warnLogger = LogManager.getLogger("warnLogger");
-    protected static org.apache.logging.log4j.Logger debugLogger = LogManager.getLogger("debugLogger");
-    protected static org.apache.logging.log4j.Logger errorLogger = LogManager.getLogger("errorLogger");
+    protected static Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    protected static Logger warnLogger = LoggerFactory.getLogger("warnLogger");
+    protected static Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+    protected static Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
 }
 

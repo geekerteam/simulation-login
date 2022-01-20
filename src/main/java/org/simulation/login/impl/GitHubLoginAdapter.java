@@ -15,8 +15,6 @@
  */
 package org.simulation.login.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -31,6 +29,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.simulation.login.AbstractLogin;
 import org.simulation.util.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ import java.util.List;
  */
 public class GitHubLoginAdapter extends AbstractLogin {
 
-    private static Log logger = LogFactory.getLog(GitHubLoginAdapter.class);
+    private static final Logger logger = LoggerFactory.getLogger(GitHubLoginAdapter.class);
 
     // Define default constructor
     public GitHubLoginAdapter(String userName, String password) {
