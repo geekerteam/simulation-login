@@ -7,7 +7,7 @@ QQ交流群：5069**5**11<u>5</u>
 ## Simulate login components List
 
 - [x] [GitHub](https://www.github.com) （已实现）
-- [ ] [CSDN] (http://blog.csdn.net)()
+- [ ] [CSDN](http://blog.csdn.net)()
 - [ ] [Google](https://www.google.com)()
 - [ ] [Facebook](https://www.facebook.com)()
 - [ ] [Twitter](https://twitter.com)()
@@ -58,11 +58,9 @@ simulation-login
 - OCR识别：Tesseract-OCR
 - 图形处理：Captcha Recognize
 - JSON工具：Jackson 2.9.6
-- 日志管理：Log4j 2.11.1
-
+- 日志管理：Logback 1.2.10
 
 ## 架构图
-![架构图]()
 
 
 ## 免责声明

@@ -5,7 +5,7 @@
 ## Simulate login components List
 
 - [x] [GitHub](https://www.github.com)(已实现)
-- [ ] [CSDN] (http://blog.csdn.net)() 
+- [ ] [CSDN](http://blog.csdn.net)() 
 - [ ] [Google](https://www.google.com)()
 - [ ] [Facebook](https://www.facebook.com)()
 - [ ] [Twitter](https://twitter.com)()
@@ -56,12 +56,9 @@ simulation-login
 - OCR识别：Tesseract-OCR
 - 图形处理：Captcha Recognize
 - JSON工具：Jackson 2.9.6
-- 日志管理：Log4j 2.11.1
-
+- 日志管理：Logback 1.2.10
 
 ## Architecture
-![Architecture]()
-
 
 ## DISCLAIMER
 1. 本开源项目仅为技术交流此一目的，严禁用于其他任何商业、违法犯罪、恶意攻击等行为
